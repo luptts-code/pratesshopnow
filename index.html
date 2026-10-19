@@ -2,12 +2,17 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Prates ShopNow | Ofertas</title>
 <style>
-:root{--bg:#f2f6fc;--card:#fff;--txt:#052057;--sub:#5b6b85;--cor:#2280d8}
-@media (prefers-color-scheme:dark){:root{--bg:#06122b;--card:#0d1f45;--txt:#eef3fb;--sub:#9fb0cc;--cor:#4a9ff0}}
+:root{--bg:#f2f6fc;--card:#fff;--txt:#052057;--sub:#5b6b85;--cor:#2280d8;--chip:#e3ecf8}
+@media (prefers-color-scheme:dark){:root{--bg:#06122b;--card:#0d1f45;--txt:#eef3fb;--sub:#9fb0cc;--cor:#4a9ff0;--chip:#16295a}}
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:var(--bg);color:var(--txt)}
-header{text-align:center;padding:24px 16px 8px}header img{height:110px;border-radius:20px;background:#fff;padding:6px}h1{margin:0;font-size:1.5rem}header p{color:var(--sub);margin:6px 0 14px}
-#busca{width:100%;max-width:340px;padding:12px 14px;border-radius:12px;border:1px solid #ddd;font-size:1rem}
-main{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;padding:16px;max-width:1000px;margin:auto}
+header{text-align:center;padding:24px 16px 8px}header img{height:110px;border-radius:20px;background:#fff;padding:6px}
+h1{margin:6px 0 0;font-size:1.5rem}header p{color:var(--sub);margin:6px 0 14px}
+#busca{width:100%;max-width:340px;padding:12px 14px;border-radius:12px;border:1px solid #c9d6ea;font-size:1rem}
+.banner{max-width:1000px;margin:8px 16px 0;padding:12px 16px;border-radius:14px;background:linear-gradient(90deg,#2280d8,#052057);color:#fff;font-weight:700;text-align:center}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:12px 16px 4px;max-width:1000px;margin:auto;scrollbar-width:none}
+.chip{flex:none;border:0;border-radius:999px;padding:8px 14px;background:var(--chip);color:var(--txt);font-size:.9rem;cursor:pointer}
+.chip.on{background:var(--cor);color:#fff}.chip.esp{background:#ffd600;color:#222;font-weight:700}.chip.esp.on{outline:2px solid var(--cor)}
+main{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;padding:12px 16px 16px;max-width:1000px;margin:auto}
 .card{background:var(--card);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 1px 4px #0001;display:flex;flex-direction:column}
 .img{position:relative;aspect-ratio:1}.img img{width:100%;height:100%;object-fit:cover;display:block}
 .num,.off{position:absolute;top:8px;padding:3px 8px;border-radius:8px;font-weight:700;font-size:.8rem;color:#fff}
@@ -16,41 +21,52 @@ main{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:
 .t{margin:0;font-size:.85rem;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .preco{margin:0;margin-top:auto;display:flex;flex-direction:column}.preco s{color:var(--sub);font-size:.8rem}.preco b{color:var(--cor)}
 .btn{background:var(--cor);color:#fff;text-align:center;padding:8px;border-radius:10px;font-weight:600;font-size:.85rem}
+@media (min-width:1032px){.banner{margin:8px auto 0}}
+#vazio{display:none;text-align:center;color:var(--sub);padding:24px}
 footer{text-align:center;color:var(--sub);font-size:.75rem;padding:16px 16px 32px}
 </style></head><body>
 <header><img src="logo.png" alt=""><h1>Prates ShopNow</h1><p>Ofertas da Shopee selecionadas para você</p>
 <input id="busca" type="search" inputmode="search" placeholder="Busque pelo número do post ou nome"></header>
-<main><a class="card" id="p9" href="https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F436723291%2F19497739980" target="_blank" rel="noopener">
+
+<nav class="chips"><button class="chip on" data-f="todos">Todos</button><button class="chip" data-f="casa">🏠 Casa</button><button class="chip" data-f="beleza">💄 Beleza</button><button class="chip" data-f="roupa">👗 Moda</button><button class="chip" data-f="eletronico">📱 Tech</button></nav>
+<main><a class="card" id="p9" data-cat="casa" data-esp="0" href="https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F436723291%2F19497739980" target="_blank" rel="noopener">
   <div class="img"><img src="https://cf.shopee.com.br/file/br-11134207-820ln-mqnh8dy3lssha2" alt="" loading="lazy"><span class="off">-37%</span><span class="num">#9</span></div>
   <div class="info"><p class="t">Teia de Aranha 20g Branca Decoração Halloween Enfeite Festa Temática Aranha de Brinquedo Pvc Decoração</p>
-  <p class="preco"><s>R$ 21,90</s> <b>R$ 13,90</b></p><span class="btn">Ver na Shopee</span></div></a><a class="card" id="p8" href="https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F1097151802%2F23093823316" target="_blank" rel="noopener">
+  <p class="preco"><s>R$ 21,90</s> <b>R$ 13,90</b></p><span class="btn">Ver na Shopee</span></div></a><a class="card" id="p8" data-cat="eletronico" data-esp="0" href="https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F1097151802%2F23093823316" target="_blank" rel="noopener">
   <div class="img"><img src="https://cf.shopee.com.br/file/br-11134207-7r98o-md3avl51a04y3d" alt="" loading="lazy"><span class="off">-17%</span><span class="num">#8</span></div>
   <div class="info"><p class="t">Console PlayStation 5 Edição Slim Digital 825GB Novo Lacrado</p>
-  <p class="preco"><s>R$ 5.499,90</s> <b>R$ 4.549,90</b></p><span class="btn">Ver na Shopee</span></div></a><a class="card" id="p7" href="https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F499362459%2F15314360006" target="_blank" rel="noopener">
+  <p class="preco"><s>R$ 5.499,90</s> <b>R$ 4.549,90</b></p><span class="btn">Ver na Shopee</span></div></a><a class="card" id="p7" data-cat="eletronico" data-esp="0" href="https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F499362459%2F15314360006" target="_blank" rel="noopener">
   <div class="img"><img src="https://cf.shopee.com.br/file/cn-11134207-7r98o-llx8qybltotga5" alt="" loading="lazy"><span class="off">-83%</span><span class="num">#7</span></div>
   <div class="info"><p class="t">LIGE Novo Smartwatch Relógio Inteligente De Chamadas Bluetooth Para Homens IP67 Esportivo À Prova D&#x27;água Fitness</p>
-  <p class="preco"><s>R$ 1.000,00</s> <b>R$ 165,90</b></p><span class="btn">Ver na Shopee</span></div></a><a class="card" id="p6" href="https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F436723291%2F23393219950" target="_blank" rel="noopener">
+  <p class="preco"><s>R$ 1.000,00</s> <b>R$ 165,90</b></p><span class="btn">Ver na Shopee</span></div></a><a class="card" id="p6" data-cat="casa" data-esp="0" href="https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F436723291%2F23393219950" target="_blank" rel="noopener">
   <div class="img"><img src="https://cf.shopee.com.br/file/br-11134207-820lf-mqnbdxurztohe1" alt="" loading="lazy"><span class="off">-27%</span><span class="num">#6</span></div>
   <div class="info"><p class="t">Fantasma Suspenso de Pendurar Decoração Halloween Festa Fantasma C/ Luz e Som Enfeite Dia das Bruxas</p>
-  <p class="preco"><s>R$ 67,90</s> <b>R$ 49,90</b></p><span class="btn">Ver na Shopee</span></div></a><a class="card" id="p5" href="https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F1189432015%2F21299567762" target="_blank" rel="noopener">
+  <p class="preco"><s>R$ 67,90</s> <b>R$ 49,90</b></p><span class="btn">Ver na Shopee</span></div></a><a class="card" id="p5" data-cat="roupa" data-esp="0" href="https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F1189432015%2F21299567762" target="_blank" rel="noopener">
   <div class="img"><img src="https://cf.shopee.com.br/file/br-11134207-820lr-mrbzecpi3evb01" alt="" loading="lazy"><span class="off">-61%</span><span class="num">#5</span></div>
   <div class="info"><p class="t">Z&amp;D Lingerie Cinta Elastique Modeladora De Alta Compressão Redutor Afina Cintura 890</p>
-  <p class="preco"><s>R$ 90,00</s> <b>R$ 34,99</b></p><span class="btn">Ver na Shopee</span></div></a><a class="card" id="p4" href="https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F969401129%2F23493569512" target="_blank" rel="noopener">
+  <p class="preco"><s>R$ 90,00</s> <b>R$ 34,99</b></p><span class="btn">Ver na Shopee</span></div></a><a class="card" id="p4" data-cat="roupa" data-esp="0" href="https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F969401129%2F23493569512" target="_blank" rel="noopener">
   <div class="img"><img src="https://cf.shopee.com.br/file/br-11134207-7r98o-maea8d5h1uof4c" alt="" loading="lazy"><span class="off">-25%</span><span class="num">#4</span></div>
   <div class="info"><p class="t">Macaquinho Fitness Blackout Alcinha Slim Sem Transparência Academia Macacão Crossfit</p>
-  <p class="preco"><s>R$ 79,90</s> <b>R$ 59,90</b></p><span class="btn">Ver na Shopee</span></div></a><a class="card" id="p3" href="https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F400124163%2F12609758750" target="_blank" rel="noopener">
+  <p class="preco"><s>R$ 79,90</s> <b>R$ 59,90</b></p><span class="btn">Ver na Shopee</span></div></a><a class="card" id="p3" data-cat="casa" data-esp="0" href="https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F400124163%2F12609758750" target="_blank" rel="noopener">
   <div class="img"><img src="https://cf.shopee.com.br/file/e2aaf579c17b8218c399bb23aab9caa6" alt="" loading="lazy"><span class="num">#3</span></div>
   <div class="info"><p class="t">Máscara Halloween Pânico com Capuz  - 01 unidade - Rizzo</p>
-  <p class="preco"> <b>R$ 12,90</b></p><span class="btn">Ver na Shopee</span></div></a><a class="card" id="p2" href="https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F418205294%2F22092223476" target="_blank" rel="noopener">
+  <p class="preco"> <b>R$ 12,90</b></p><span class="btn">Ver na Shopee</span></div></a><a class="card" id="p2" data-cat="beleza" data-esp="0" href="https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F418205294%2F22092223476" target="_blank" rel="noopener">
   <div class="img"><img src="https://cf.shopee.com.br/file/br-11134207-7r98o-m0x2kyt0y63qe1" alt="" loading="lazy"><span class="off">-50%</span><span class="num">#2</span></div>
   <div class="info"><p class="t">ANA1108 Kit 32 Peças Conjunto De Pincéis De Maquiagem Para Pó Sombra Delineador Lábios com estojo</p>
-  <p class="preco"><s>R$ 60,00</s> <b>R$ 29,98</b></p><span class="btn">Ver na Shopee</span></div></a><a class="card" id="p1" href="https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F1177903362%2F22792887317" target="_blank" rel="noopener">
+  <p class="preco"><s>R$ 60,00</s> <b>R$ 29,98</b></p><span class="btn">Ver na Shopee</span></div></a><a class="card" id="p1" data-cat="beleza" data-esp="0" href="https://shope.ee/an_redir?origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F1177903362%2F22792887317" target="_blank" rel="noopener">
   <div class="img"><img src="https://cf.shopee.com.br/file/br-11134207-81zth-ml2gsdt5srnm0f" alt="" loading="lazy"><span class="num">#1</span></div>
   <div class="info"><p class="t">Kit 3 Unidades Sabonete Líquido Chá Branco 500 ml</p>
   <p class="preco"> <b>R$ 44,90</b></p><span class="btn">Ver na Shopee</span></div></a></main>
-<footer>Atualizado em 19/10/2026 15:40 · Links de afiliado: podemos receber comissão pelas compras.</footer>
+<p id="vazio">Nenhum produto encontrado.</p>
+<footer>Atualizado em 19/10/2026 15:54 · Links de afiliado: podemos receber comissão pelas compras.</footer>
 <script>
-const b=document.getElementById('busca');b.addEventListener('input',()=>{const q=b.value.trim().toLowerCase().replace('#','');
-document.querySelectorAll('.card').forEach(c=>{const n=c.id.slice(1),t=c.textContent.toLowerCase();
-c.style.display=!q||n===q||t.includes(q)?'':'none'})});
+let filtro='todos';const b=document.getElementById('busca');
+function aplicar(){const q=b.value.trim().toLowerCase().replace('#','');let n=0;
+document.querySelectorAll('.card').forEach(c=>{const num=c.id.slice(1),t=c.textContent.toLowerCase();
+const okF=filtro==='todos'||(filtro==='especial'?c.dataset.esp==='1':c.dataset.cat===filtro);
+const okB=!q||(/^\d+$/.test(q)?num===q:t.includes(q));const v=okF&&okB;c.style.display=v?'':'none';if(v)n++});
+document.getElementById('vazio').style.display=n?'none':'block'}
+b.addEventListener('input',()=>{if(b.value.trim()){filtro='todos';marcar()}aplicar()});
+function marcar(){document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x.dataset.f===filtro))}
+document.querySelectorAll('.chip').forEach(x=>x.addEventListener('click',()=>{filtro=x.dataset.f;marcar();aplicar()}));
 </script></body></html>
